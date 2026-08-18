@@ -12,21 +12,21 @@ The goal is not just to conduct events, but to build a **sustainable student tec
 
 ## 🚀 About the Project
 
-This repository contains the official website of **AWS Student Builder Group — Government Engineering College, Buxar**.
+The AWS Student Builder Group (AWS SBG) — Government Engineering College, Buxar is a student-led technology community focused on helping students explore modern technologies, build real-world projects, participate in hackathons, and grow through collaboration.
 
-The website acts as the community's central digital platform for:
+This repository contains the official community website for the 2026–2027 chapter.
 
-* 📢 Community announcements
-* 🎫 Upcoming events
-* 👥 Core Team information
-* ☁️ AWS & Cloud learning resources
-* 💻 Projects and build activities
-* 🏆 Hackathons and competitions
-* 📸 Community gallery
-* 🤝 Community connections
-* 📝 Enquiries and registrations
+The platform brings together:
 
----
+📢 Community announcements
+🎫 Upcoming and past events
+👥 Core Team information
+☁️ AWS & Cloud learning resources
+💻 Projects and technical builds
+🏆 Hackathons & competitions
+📸 Community gallery
+🤝 Community connections
+📝 Enquiries and registrations
 
 ## 🎯 Community Focus
 
