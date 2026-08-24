@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import logo from '@/assets/logo/aws_logo.svg';
+import logo from '@/assets/logo/aws_logo.jpeg';
 
 const WORDS = ['LEARN', 'BUILD', 'COLLABORATE', 'GROW'];
 
