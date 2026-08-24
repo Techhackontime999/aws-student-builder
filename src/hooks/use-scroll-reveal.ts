@@ -3,6 +3,7 @@ import { useLayoutEffect } from 'react';
 const REVEAL_SELECTORS = [
   '.section-intro',
   '.about-content',
+  '.about-facts',
   '.focus-card',
   '.why-item',
   '.event-empty',
