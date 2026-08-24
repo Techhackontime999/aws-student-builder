@@ -22,6 +22,10 @@ import {
   X,
   Zap,
 } from 'lucide-react';
+import { ContainerScroll } from '@/components/ui/container-scroll-animation';
+import { Loader } from '@/components/ui/loader';
+import { ScrollProgress } from '@/components/ui/scroll-progress';
+import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import logo from '@/assets/logo/aws_logo.jpeg';
 import amanKumarHappyPhoto from '@/assets/team/aman-kumar-happy.png';
 import amberAryaPhoto from '@/assets/team/amber-arya.png';
@@ -153,11 +157,15 @@ function App() {
   const [eventTab, setEventTab] = useState<'UPCOMING' | 'PAST'>('UPCOMING');
   const [expandedMember, setExpandedMember] = useState<string | null>(null);
   const [legalDocument, setLegalDocument] = useState<LegalDocument | null>(null);
+  const [loading, setLoading] = useState(true);
 
   const closeMenu = () => setMenuOpen(false);
+  useScrollReveal(!loading);
 
   return (
-    <div className="site-shell">
+    <div className={loading ? 'site-shell app-loading' : 'site-shell'}>
+      <ScrollProgress />
+      {loading && <Loader onComplete={() => setLoading(false)} />}
       <div className="announcement"><span>/// AWS SBG GEC BUXAR ///</span><b>LEARN · BUILD · COLLABORATE · GROW</b><a href="#community">JOIN THE COMMUNITY <ArrowUpRight size={14} /></a></div>
       <header className="navbar">
         <a className="brand" href="#top" onClick={closeMenu}><img src={logo} alt="AWS SBG GEC Buxar logo" /><span>AWS SBG <i>·</i> GEC BUXAR</span></a>
@@ -193,6 +201,31 @@ function App() {
         </section>
 
         <section className="focus section-pad"><div className="section-intro split-intro"><div><SectionLabel>02 / THE SKILL STACK</SectionLabel><h2>WHAT WE BUILD<br />& <em>LEARN<span>_</span></em></h2></div><p>From your first cloud console login to production-ready systems, there is always a next thing to discover.</p></div><div className="focus-grid">{focusAreas.map(([number, title, text, Icon]) => <div className="focus-card" key={title}><span className="card-number">{number}</span><Icon className="card-icon" size={25} /><h3>{title}</h3><p>{text}</p><ArrowUpRight className="card-arrow" size={18} /></div>)}</div></section>
+
+        <section className="showcase-scroll bg-[#05070a] overflow-hidden">
+          <ContainerScroll
+            titleComponent={
+              <>
+                <div className="mb-6 inline-flex items-center gap-3 text-[#ffd43b] font-mono text-[10px] tracking-[.14em] uppercase"><span className="w-1.5 h-1.5 rounded-full bg-[#ffd43b] shadow-[0_0_14px_#ffd43b]" /> THE BUILDER JOURNEY</div>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white leading-tight" style={{ letterSpacing: '-.04em' }}>
+                  FROM FIRST LOGIN TO<br />
+                  <span className="block mt-2 text-5xl md:text-[5.5rem] leading-none font-black bg-clip-text text-transparent bg-gradient-to-r from-[#FFD43B] via-white to-[#7DA9E8]">
+                    REAL CLOUD BUILDS<span className="text-[#FFD43B]">_</span>
+                  </span>
+                </h1>
+                <p className="mt-7 font-mono text-[10px] md:text-xs tracking-[.18em] text-[#aab4c3] uppercase">Workshops · Hands-on Labs · Hackathons — Keep Scrolling</p>
+              </>
+            }
+          >
+            <img
+              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2071&q=80"
+              alt="Global cloud network visualization"
+              className="mx-auto h-full w-full rounded-xl object-cover object-center"
+              draggable={false}
+              loading="lazy"
+            />
+          </ContainerScroll>
+        </section>
 
         <section className="why section-pad section-navy"><div className="section-intro split-intro"><div><SectionLabel>03 / THE ADVANTAGE</SectionLabel><h2>WHY JOIN<br /><em>AWS SBG?<span>_</span></em></h2></div><div className="stat-callout"><strong>01</strong><span>COMMUNITY<br />OVER COMPETITION</span></div></div><div className="why-grid">{['HANDS-ON LEARNING', 'AWS & CLOUD', 'PROJECTS', 'HACKATHONS', 'COMMUNITY', 'CAREER GROWTH'].map((title, i) => <div className="why-item" key={title}><span>0{i + 1}</span><h3>{title}</h3><p>{['Learn by doing, not just watching.', 'Build practical cloud skills that travel.', 'Create solutions with a real purpose.', 'Build, compete and collaborate.', 'Meet motivated student builders.', 'Grow technical and professional confidence.'][i]}</p></div>)}</div></section>
 
