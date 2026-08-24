@@ -27,7 +27,8 @@ import { Loader } from '@/components/ui/loader';
 import { ScrollProgress } from '@/components/ui/scroll-progress';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import logo from '@/assets/logo/aws_logo.jpeg';
-import awsCloudImage from '@/assets/images/aws_cloud.png';
+import awsCloudImageHorizontal from '@/assets/images/aws_cloud_horizontal.png';
+import awsCloudImageVertical from '@/assets/images/aws_cloud_vertical.png';
 import amanKumarHappyPhoto from '@/assets/team/aman-kumar-happy.png';
 import amberAryaPhoto from '@/assets/team/amber-arya.png';
 import amitKumarPhoto from '@/assets/team/amit-kumar.jpeg';
@@ -220,13 +221,16 @@ function App() {
             }
           >
             <div className="relative h-full w-full">
-              <img
-                src={awsCloudImage}
-                alt="AWS cloud builder visualization"
-                className="absolute inset-0 block h-full w-full rounded-xl object-cover object-center"
-                draggable={false}
-                loading="lazy"
-              />
+              <picture>
+                <source media="(min-width: 768px)" srcSet={awsCloudImageHorizontal} />
+                <img
+                  src={awsCloudImageVertical}
+                  alt="AWS cloud builder visualization"
+                  className="absolute inset-0 block h-full w-full rounded-xl object-cover object-center"
+                  draggable={false}
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </ContainerScroll>
         </section>
