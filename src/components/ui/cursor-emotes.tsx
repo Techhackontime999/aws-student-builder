@@ -27,9 +27,9 @@ interface Emote {
 }
 
 const pool: Record<EmoteKind, string[]> = {
-  hover: ["👀", "✨", "💛", "🤩", "😊", "🫶", "🌟", "🔎", "🎯", "🙌"],
-  click: ["🎉", "💥", "⚡", "✴️", "✨", "🌟", "💫", "🚀", "❤️‍🔥", "🎊"],
-  section: ["⭐", "☁️", "🧠", "💡", "🎓", "🤝", "📚", "🚀", "🌱", "🏗️", "🛰️", "✨"],
+  hover: ["☁️", "💾", "⚡", "🛡️", "🧠", "🚀", "🔥", "💡", "🌩️", "⚙️"],
+  click: ["🚀", "⚡", "🔥", "💥", "💾", "💡", "⚙️", "🌩️", "✨", "📦"],
+  section: ["☁️", "🌩️", "🧠", "💡", "🚀", "🛡️", "⚙️", "📦", "💾", "🔥", "🛰️", "⚡"],
 };
 
 const rand = (min: number, max: number) => Math.random() * (max - min) + min;
@@ -41,13 +41,13 @@ const HOVER_SELECTOR =
   "a, button, [role='button'], input, textarea, select, label, .team-card, .focus-card, .why-item, .social-card, .resource-column, .principle, .tabs, .stat";
 
 const SECTION_MAP: Array<[string, string[]]> = [
-  ["#about", ["🎓", "📚", "🧠"]],
-  ["#events", ["📅", "🎊", "🎯"]],
-  ["#team", ["💛", "🤝", "🙌"]],
-  ["#projects", ["🛠️", "⚙️", "🚀"]],
-  ["#resources", ["📚", "💡", "🧠"]],
-  ["#community", ["🤝", "💬", "✨"]],
-  [".enquiry", ["📮", "✉️", "💡"]],
+  ["#about", ["👋", "🌱", "☁️"]],
+  ["#events", ["📅", "🎯", "💡"]],
+  ["#team", ["🤝", "⚡", "💛"]],
+  ["#projects", ["🛠️", "🚀", "📦"]],
+  ["#resources", ["📚", "📖", "🧠"]],
+  ["#community", ["🤝", "💬", "💡"]],
+  [".enquiry", ["📮", "📧", "☁️"]],
   [".join-cta", ["☁️", "🚀", "✨"]],
 ];
 
