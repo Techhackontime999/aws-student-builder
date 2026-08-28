@@ -92,3 +92,35 @@ h2 { font-size: clamp(45px, 6vw, 82px); margin-bottom: 0; font-weight: 800; }.sp
 .cursor-blink { animation: cursor-blink 1.05s step-end infinite; }
 @keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 .app-loading .hero-copy, .app-loading .hero-visual { animation-play-state: paused !important; }
+
+@media (pointer: fine) {
+  .site-shell,
+  .site-shell a,
+  .site-shell button,
+  .site-shell input,
+  .site-shell textarea,
+  .site-shell select,
+  .site-shell label {
+    cursor: none !important;
+  }
+}
+
+/* ============ CURSOR EMOTES — cute reactions ============ */
+.cursor-emote {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.cursor-emote-emoji {
+  display: block;
+  line-height: 1;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+  transform: translateZ(0);
+}
+
