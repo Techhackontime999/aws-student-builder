@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 import { ContainerScroll } from '@/components/ui/container-scroll-animation';
 import { CloudCursor } from '@/components/ui/cloud-cursor';
-import { CursorEmotes } from '@/components/ui/cursor-emotes';
+import { CursorGlow } from '@/components/ui/cursor-glow';
 import { ImageHover } from '@/components/ui/image-reveal';
 import { SmoothCursor } from '@/components/ui/smooth-cursor';
 import { Loader } from '@/components/ui/loader';
@@ -180,7 +180,7 @@ function App() {
     <div className={loading ? 'site-shell app-loading' : 'site-shell'}>
       <ScrollProgress />
       {isFinePointer && <SmoothCursor cursor={<CloudCursor />} />}
-      <CursorEmotes />
+      {isFinePointer && <CursorGlow />}
       {loading && <Loader onComplete={() => setLoading(false)} />}
       <div className="announcement"><span>/// AWS SBG GEC BUXAR ///</span><b>LEARN · BUILD · COLLABORATE · GROW</b><a href="#community">JOIN THE COMMUNITY <ArrowUpRight size={14} /></a></div>
       <header className="navbar">
